@@ -1,0 +1,31 @@
+version: "3"
+services:
+
+  db:
+    image: postgres:11-alpine
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_USER: treasurenet
+    logging:
+      driver: "none"
+    restart: unless-stopped
+    volumes:
+      - /data/treasureWiki:/var/lib/postgresql/data
+
+  wiki:
+    image: treasurenet/wiki:1
+    depends_on:
+      - db
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: treasurenet
+      DB_PASS: passwd
+      DB_NAME: wiki
+    restart: unless-stopped
+    ports:
+      - "3010:3000"
+    volumes:
+      - ./wiki/assets:/wiki/assets
