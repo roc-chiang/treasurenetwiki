@@ -4,7 +4,7 @@
   </a>
 </p>
 
-[![License](https://img.shields.io/badge/license-AGPLv3-blue.svg?style=flat)](https://github.com/requarks/wiki/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-AGPLv3-blue.svg?style=flat)](https://github.com/treasurenetprotocal/wiki/blob/master/LICENSE)
 
 # TreasureNet - wiki
 
